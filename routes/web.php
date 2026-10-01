@@ -20,14 +20,17 @@ Route::get('/', function () {
     return view('welcome');       
 });
 
-Route::get('blog', function(){
-    return view('blog');
-});
 
 Route::get('aboutus', function(){
     return view('aboutus');
 });
-
+    
+    
+    
+Route::get('blog', function(){
+    return view('blog');
+});
+    
 // salah satu jenis routes yang melewati controller
 Route::get('blog', [BlogController::class, 'index'])->name('blog');
 Route::get('blog/add', [BlogController::class, 'add']);
@@ -35,7 +38,8 @@ Route::post('blog/create', [BlogController::class, 'create']);
 Route::get('blog/{id}/detail', [BlogController::class, 'show']);
 Route::get('blog/{id}/edit', [BlogController::class, 'edit']);
 Route::patch('blog/{id}/update', [BlogController::class, 'update']);
-Route::delete('blog/{id}/delete', [BlogController::class, 'delete']);
+Route::delete('blog/{id}/delete', [BlogController::class, 'destroy']);
+Route::get('blog/{id}/restore', [BlogController::class, 'restore']);
 
 
 

@@ -10,6 +10,7 @@ routes/api_v1.php & routes/api_v2.php (Untuk versi API yang berbeda) -->
 <?php
 
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -41,6 +42,7 @@ Route::patch('blog/{id}/update', [BlogController::class, 'update']);
 Route::delete('blog/{id}/delete', [BlogController::class, 'destroy']);
 Route::get('blog/{id}/restore', [BlogController::class, 'restore']);
 
+Route::get('/users', [UserController::class, 'index']);
 
 
 //salah satu jenis routes juga 

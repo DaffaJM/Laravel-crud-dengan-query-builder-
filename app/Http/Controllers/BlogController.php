@@ -23,7 +23,6 @@ class BlogController extends Controller
       $title = $request->title;
       $blogs = Blog::where('title', 'LIKE', '%'.$title.'%')->orderBy('id', 'desc')->paginate(10);
       return view('blog', ['blogs'=> $blogs, 'title'=> $title]);
-
    }
 
    function add()

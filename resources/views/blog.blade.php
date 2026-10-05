@@ -48,9 +48,9 @@
                             <tr>
                                 <td>{{ ($blogs->currentpage() - 1) * $blogs->perpage() + $loop->index + 1 }}</td>
                                 <td>{{ $blog->title }}</td>
-                                <td><a href="{{ 'blog/' . $blog->id . '/detail' }}">view</a> | <a
-                                        href="blog/{{ $blog->id }}/edit">edit</a> | <form
-                                        action="{{ 'blog/' . $blog->id . '/delete' }}" method="POST" style="display:inline;">
+                                <td><a href="{{ 'blog/' . $blog->id . '/detail' }}">view</a> | 
+                                    <a href="blog/{{ $blog->id }}/edit">edit</a> | 
+                                    <form action="{{ 'blog/' . $blog->id . '/delete' }}" method="POST" style="display:inline;">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="text-danger border-0 bg-transparent p-0"
